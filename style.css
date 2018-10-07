@@ -54,7 +54,11 @@ main {
   margin: 0 auto;
 }
 footer {
-  background: red;
+  border-top: 3px #444 solid;
+  height: 60px;
+  padding: 8px;
+  height: 60px;
+  text-align: center;
 }
 
 .navbar {
@@ -62,7 +66,7 @@ footer {
   display: block;
   height: 100%;
   margin-top: 32px;
-  padding: 12px 0;
+  padding: 16px 0;
 
 }
 .navbar li {
@@ -72,7 +76,197 @@ footer {
 .navbar a {
   display: block;
   text-align: center;
-  padding: 14px 16px;
+  padding: 8px 16px;
   text-decoration: none;
 }
 
+.section-header {
+  margin: 36px 0;
+  text-transform: uppercase;
+  font-size: 24px;
+  text-align: center;
+}
+
+
+.about-block {
+  display: grid;
+  grid-template: "photo info";
+  grid-template-columns: 33% auto;
+}
+.photo-block {
+  grid-area: photo;
+  background-image: url(images/logo.jpg);
+  background-size: cover;
+  height: 100%;
+  background-position: center;
+}
+
+.info-block {
+  grid-area: info;
+  padding-left: 32px;
+  display: grid;
+  grid-template:
+      "short short" 15%
+      "first-letter descr" auto/1fr 4fr;
+
+}
+
+.short-info-block {
+  grid-area: short;
+  margin: 16px 0;
+}
+.first-letter-block {
+  grid-area: first-letter;
+  display: grid;
+  margin: auto;
+  font-size: 4em;
+}
+.descr-info-block {
+  grid-area: descr;
+  margin: 16px 0;
+}
+
+.languages {
+  padding-left: 16px;
+  list-style-type: square;
+}
+
+.descr-info-block li {
+  padding: 8px 0;
+}
+section {
+  padding: 36px 0;
+}
+section:nth-child(2n+1){
+  background: #dddddd;
+}
+
+
+
+.section-block {
+  display:grid;
+}
+
+.slider {
+    width: 66.67%;
+    height: 384px;
+    position: relative;
+}
+
+.right .slider, .left .descr{
+    order: 1;
+}
+.right .descr, .left .slider{
+    order: 0;
+}
+
+.descr {
+    display: flex;
+    flex-flow: row wrap;
+    width: 33%;
+}
+.right .descr {
+    padding-right: 96px;
+
+}
+
+.left .descr {
+    padding-left: 96px;
+
+}
+
+.img {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    background-position: 50% 0%;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.set1:nth-child(1) {
+    background-image: url('images/job1_1.png');
+}
+.set1:nth-child(2) {
+    background-image: url('images/job1_2.png');
+}
+
+.set1:nth-child(3) {
+    background-image: url('images/job1_3.png');
+}
+.set1:nth-child(4) {
+    background-image: url('images/job1_4.png');
+}
+.set1:nth-child(5) {
+    background-image: url('images/job1_5.png');
+}
+
+.set2:nth-child(1) {
+    background-image: url('images/job2_1.png');
+}
+.set2:nth-child(2) {
+    background-image: url('images/job2_2.png');
+}
+.set2:nth-child(3) {
+    background-image: url('images/job2_3.png');
+}
+.set2:nth-child(4) {
+    background-image: url('images/job2_4.png');
+}
+.set2:nth-child(5) {
+    background-image: url('images/job2_5.png');
+}
+
+[id^='slideBtn'] {
+    display: none;
+}
+
+.controls {
+    position: absolute;
+    top: 50%;
+}
+.right .controls {
+    transform: translate(-24px, -50%);
+}
+.left .controls{
+    right:0%;
+    transform: translate(24px, -50%);
+}
+
+.controls label {
+    display: block;
+    height: 8px;
+    width: 8px;
+    margin-bottom: 16px;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #000;
+}
+
+
+input[name='slideBtn1']:nth-child(1):checked ~ .gallery .set1:nth-child(1),
+input[name='slideBtn1']:nth-child(2):checked ~ .gallery .set1:nth-child(2),
+input[name='slideBtn1']:nth-child(3):checked ~ .gallery .set1:nth-child(3),
+input[name='slideBtn1']:nth-child(4):checked ~ .gallery .set1:nth-child(4),
+input[name='slideBtn1']:nth-child(5):checked ~ .gallery .set1:nth-child(5),
+input[name='slideBtn2']:nth-child(1):checked ~ .gallery .set2:nth-child(1),
+input[name='slideBtn2']:nth-child(2):checked ~ .gallery .set2:nth-child(2),
+input[name='slideBtn2']:nth-child(3):checked ~ .gallery .set2:nth-child(3),
+input[name='slideBtn2']:nth-child(4):checked ~ .gallery .set2:nth-child(4),
+input[name='slideBtn2']:nth-child(5):checked ~ .gallery .set2:nth-child(5) {
+    opacity: 1;
+}
+input[name='slideBtn1']:nth-child(1):checked ~ .controls label.slideBtn1:nth-child(1),
+input[name='slideBtn1']:nth-child(2):checked ~ .controls label.slideBtn1:nth-child(2),
+input[name='slideBtn1']:nth-child(3):checked ~ .controls label.slideBtn1:nth-child(3)
+input[name='slideBtn1']:nth-child(4):checked ~ .controls label.slideBtn1:nth-child(4),
+input[name='slideBtn1']:nth-child(5):checked ~ .controls label.slideBtn1:nth-child(5),
+input[name='slideBtn2']:nth-child(1):checked ~ .controls label.slideBtn2:nth-child(1),
+input[name='slideBtn2']:nth-child(2):checked ~ .controls label.slideBtn2:nth-child(2),
+input[name='slideBtn2']:nth-child(3):checked ~ .controls label.slideBtn2:nth-child(3),
+input[name='slideBtn2']:nth-child(4):checked ~ .controls label.slideBtn2:nth-child(4),
+input[name='slideBtn2']:nth-child(5):checked ~ .controls label.slideBtn2:nth-child(5) {
+    background-color: #DD3E18;
+}
