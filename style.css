@@ -143,8 +143,27 @@ section:nth-child(2n+1){
 
 
 
-.section-block {
+.skills-block {
   display:grid;
+  grid-template:
+      "tech examples" auto/1fr 3fr;
+}
+.technologies-block {
+  grid-area: tech;
+  text-align: center;
+}
+.technologies-block ul{
+
+  margin-top: 36px;
+}
+
+.technologies-block ul i {
+    font-size: 24px;
+}
+
+.examples-block {
+  grid-area: examples;
+  float:right;
 }
 
 .slider {
@@ -164,6 +183,7 @@ section:nth-child(2n+1){
     display: flex;
     flex-flow: row wrap;
     width: 33%;
+    margin-top: 36px;
 }
 .right .descr {
     padding-right: 96px;
@@ -269,4 +289,9 @@ input[name='slideBtn2']:nth-child(3):checked ~ .controls label.slideBtn2:nth-chi
 input[name='slideBtn2']:nth-child(4):checked ~ .controls label.slideBtn2:nth-child(4),
 input[name='slideBtn2']:nth-child(5):checked ~ .controls label.slideBtn2:nth-child(5) {
     background-color: #DD3E18;
+}
+
+.project-link {
+  text-decoration: underline;
+  color: #DD3E18;
 }
